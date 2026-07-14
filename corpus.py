@@ -1,4 +1,4 @@
-import nltk
+import nltk.corpus
 
 def build_corpus():
     words_list = nltk.corpus.words.words()
