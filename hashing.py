@@ -1,6 +1,6 @@
 import numpy as np
 
-def build_hash_functions(table_size):
+def get_hash_functions(table_size):
     hash_functions = []
     hash_functions.append(lambda s: ascii_sum(s, table_size))
     hash_functions.append(lambda s: jenkins_hash(s, table_size))
