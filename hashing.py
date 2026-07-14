@@ -1,5 +1,15 @@
 import numpy as np
 
+def build_hash_functions(table_size):
+    hash_functions = []
+    hash_functions.append(lambda s: ascii_sum(s, table_size))
+    hash_functions.append(lambda s: jenkins_hash(s, table_size))
+    for seed in range(10):
+        hash_functions.append(lambda s, seed=seed: division(s, table_size, seed))
+    for seed in range(10):
+        hash_functions.append(lambda s, seed=seed: fnv1a(s, table_size, seed))
+    return hash_functions
+
 def ascii_sum(string, table_size):
     total = 0
     for char in string:
