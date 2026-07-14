@@ -24,3 +24,14 @@ def division(string, table_size, seed):
     for i in range(len(string)):
         total += ord(string[i]) * (prime * i)
     return str(total % table_size)
+
+def fnv1a(string, table_size, seed):
+    fnv_primes = [16777619, 16777633, 16777639, 16777643, 16777669,
+                  16777679, 16777681, 16777699, 16777711, 16777721]
+    prime = fnv_primes[seed]
+    hash_value = 0x811c9dc5
+    for char in string:
+        hash_value *= prime
+        hash_value ^= ord(char)
+        hash_value &= 0xffffffff
+    return str(hash_value % table_size)
