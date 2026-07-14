@@ -44,4 +44,3 @@ class BKTree:
                     stack.append(child_node)
             results = sorted(heap, key=lambda x: (x[0], x[1]), reverse=True)
             return [word for _, word in results]
-    
