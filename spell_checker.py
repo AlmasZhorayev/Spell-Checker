@@ -12,11 +12,11 @@ def build_spell_checker(table_size = 18000000):
     for word in words:
         bf.add(word)
     
-    bktree = bktree.BKTree()
+    tree = bktree.BKTree()
     for word in words:
-        bktree.add(word)
+        tree.add(word)
 
-    return bf, bktree
+    return bf, tree
 
 def check_sentence(sentence, bf, tree, k=3):
     results = {}
