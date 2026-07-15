@@ -42,5 +42,5 @@ class BKTree:
             for child_dist, child_node in node.children.items():
                 if abs(child_dist - dist) <= worst_dist:
                     stack.append(child_node)
-            results = sorted(heap, key=lambda x: (x[0], x[1]), reverse=True)
-            return [word for _, word in results]
+        results = sorted(heap, key=lambda x: (x[0], x[1]), reverse=True)
+        return [w for _, w in results]
